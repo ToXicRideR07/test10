@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+    <div class="full-con">
+        <div class="container">
+            <h2>Password Strength Indicator</h2>
+            <input onclick="r()" id="input" type="password" placeholder="Password">
+            <div class="box">
+                <div id="red" class="line" style="background-color: grey;"></div>
+                <div id="orange" class="line" style="background-color: grey;"></div>
+                <div id="green" class="line" style="background-color: grey;"></div>
+            </div>
+            <p id="res"></p>
+        </div>
+    </div>
+
+
+    <script>
+        var input = document.getElementById("input")
+        var red = document.getElementById("red")
+        var orange = document.getElementById("orange")
+        var green = document.getElementById("green")
+        var res = document.getElementById("res")
+
+        function r() {
+            if (input.value <= 6) {
+                res.textContent = "your password is week"
+                red.style.backgroundColor = "red"
+                res.style.color = "red"
+
+            }
+            else if (input.value === 7) {
+                res.textContent = "your password is medium"
+                orange.style.backgroundColor = "orange"
+                res.style.color = "orange"
+            }
+            else {
+                res.textContent = "your password is strong"
+                green.style.backgroundColor = "green"
+                res.style.color = "green"
+            }
+        }
+    </script>
+</body>
+
+</html>
